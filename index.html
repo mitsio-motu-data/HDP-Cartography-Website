@@ -85,7 +85,7 @@
     canvas {
       touch-action: none;
     }
-    
+
 </style>
 
 <head>
@@ -99,6 +99,8 @@
             <div class="grid-item item-span">
                 <h1>souvenirs de l’hôtel de la paix</h1>
                 <canvas id="model-viewer"></canvas>
+                <button id="zoom-in">+</button>
+                <button id="zoom-out">-</button>
                 <!-- <img class="my-image" src="src/drone3d_placeholder.jpg" alt="Image"> -->
             </div>
             <div class="grid-item">
@@ -173,10 +175,9 @@
             </div>
 </body>
   
-
   <script>
-    const canvasWidth = 400;
-    const canvasHeight = 300;
+    const canvasWidth = 700;
+    const canvasHeight = 400;
   
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, canvasWidth / canvasHeight, 0.1, 1000);
@@ -193,22 +194,21 @@
     let isDragging = false;
     let previousMousePosition = { x: 0, y: 0 };
     let previousTouchPosition = { x: 0, y: 0 };
-    let zoomStartDistance = 0;
-    let zoomCurrentDistance = 0;
+    let zoomLevel = 1;
+    const zoomIncrement = 0.1;
+  
     document.addEventListener('mousedown', onMouseDown);
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
     document.addEventListener('touchstart', onTouchStart);
     document.addEventListener('touchmove', onTouchMove);
     document.addEventListener('touchend', onTouchEnd);
-    document.addEventListener('wheel', onWheel);
+    document.getElementById('zoom-in').addEventListener('click', zoomIn);
+    document.getElementById('zoom-out').addEventListener('click', zoomOut);
   
     function onMouseDown(event) {
-      if (isCursorWithinCanvas(event)) {
-        isDragging = true;
-        previousMousePosition = getMousePosition(event);
-        disableScrolling();
-      }
+      isDragging = true;
+      previousMousePosition = getMousePosition(event);
     }
   
     function onMouseMove(event) {
@@ -235,69 +235,54 @@
     }
   
     function onMouseUp(event) {
-      if (isDragging) {
-        isDragging = false;
-        enableScrolling();
-      }
+      isDragging = false;
     }
   
     function onTouchStart(event) {
-      if (event.touches.length === 2) {
-        isDragging = true;
-        zoomStartDistance = getTouchDistance(event);
-        previousTouchPosition = getTouchCenter(event);
-        disableScrolling();
-      } else {
-        isDragging = false;
-        previousTouchPosition = getTouchPosition(event);
-      }
+      isDragging = true;
+      previousTouchPosition = getTouchPosition(event);
     }
   
     function onTouchMove(event) {
-      if (event.touches.length === 2 && isDragging) {
-        const touchCenter = getTouchCenter(event);
-        const touchDistance = getTouchDistance(event);
-        const zoomDelta = touchDistance - zoomStartDistance;
-        const zoomScale = 0.001;
+      if (!isDragging) return;
   
-        camera.position.z -= zoomDelta * zoomScale;
+      const currentTouchPosition = getTouchPosition(event);
+      const deltaMove = {
+        x: currentTouchPosition.x - previousTouchPosition.x,
+        y: currentTouchPosition.y - previousTouchPosition.y
+      };
   
-        zoomStartDistance = touchDistance;
-        previousTouchPosition = touchCenter;
-      } else if (isDragging) {
-        const currentTouchPosition = getTouchPosition(event);
-        const deltaMove = {
-          x: currentTouchPosition.x - previousTouchPosition.x,
-          y: currentTouchPosition.y - previousTouchPosition.y
-        };
+      const deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(
+        new THREE.Euler(
+          toRadians(deltaMove.y * 1),
+          toRadians(deltaMove.x * 1),
+          0,
+          'XYZ'
+        )
+      );
   
-        const deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(
-          new THREE.Euler(
-            toRadians(deltaMove.y * 1),
-            toRadians(deltaMove.x * 1),
-            0,
-            'XYZ'
-          )
-        );
+      cube.quaternion.multiplyQuaternions(deltaRotationQuaternion, cube.quaternion);
   
-        cube.quaternion.multiplyQuaternions(deltaRotationQuaternion, cube.quaternion);
-  
-        previousTouchPosition = currentTouchPosition;
-      }
+      previousTouchPosition = currentTouchPosition;
     }
   
     function onTouchEnd(event) {
-      if (isDragging) {
-        isDragging = false;
-        enableScrolling();
-      }
+      isDragging = false;
     }
   
-    function onWheel(event) {
-      const zoomDelta = event.deltaY;
-      const zoomScale = 0.01;
+    function zoomIn() {
+      zoom(1);
+    }
   
-      camera.position.z -= zoomDelta * zoomScale;
+    function zoomOut() {
+      zoom(-1);
+    }
+  
+    function zoom(delta) {
+      zoomLevel += delta * zoomIncrement;
+      zoomLevel = Math.max(zoomLevel, 0.1);
+      zoomLevel = Math.min(zoomLevel, 2);
+      cube.scale.set(zoomLevel, zoomLevel, zoomLevel);
     }
   
     function getMousePosition(event) {
@@ -307,26 +292,6 @@
     function getTouchPosition(event) {
       const touch = event.touches[0];
       return { x: touch.clientX, y: touch.clientY };
-    }
-  
-    function getTouchCenter(event) {
-      const touch1 = event.touches[0];
-      const touch2 = event.touches[1];
-      const center = {
-        x: (touch1.clientX + touch2.clientX) / 2,
-        y: (touch1.clientY + touch2.clientY) / 2
-      };
-      return center;
-    }
-  
-    function getTouchDistance(event) {
-      const touch1 = event.touches[0];
-      const touch2 = event.touches[1];
-      const distance = Math.sqrt(
-        Math.pow(touch2.clientX - touch1.clientX, 2) +
-        Math.pow(touch2.clientY - touch1.clientY, 2)
-      );
-      return distance;
     }
   
     function animate() {
@@ -341,30 +306,11 @@
       return angle * (Math.PI / 180);
     }
   
-    function disableScrolling() {
-      document.body.style.overflow = 'hidden';
-    }
-  
-    function enableScrolling() {
-      document.body.style.overflow = 'auto';
-    }
-  
-    function isCursorWithinCanvas(event) {
-      const canvas = document.getElementById('model-viewer');
-      const canvasRect = canvas.getBoundingClientRect();
-      const cursorX = event.clientX;
-      const cursorY = event.clientY;
-  
-      return (
-        cursorX >= canvasRect.left &&
-        cursorX <= canvasRect.right &&
-        cursorY >= canvasRect.top &&
-        cursorY <= canvasRect.bottom
-      );
-    }
+    // Disable zooming using the scroll wheel
+    document.addEventListener('wheel', function(event) {
+      event.preventDefault();
+    });
   </script>
-  
-  
   
   
 
