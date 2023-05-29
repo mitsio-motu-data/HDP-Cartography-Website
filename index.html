@@ -1,74 +1,165 @@
-
 <!DOCTYPE html>
 <html>
-    <style>
-        body {
-          font-family: monospace, sans-serif;
-          background-color: #333; /* Set the background color to black */
-        }
-    
-        h1 {
-          color: #FFFFFF;
-          font-size: 24px;
-          font-weight: bold;
-        }
-    
-        p {
-          color: #FFFFFF;
-          font-size: 16px;
-          line-height: 1.5;
-          max-width: 600px; /* Adjust the max width as needed */
-          margin-top: 1px;
-        }
+<style>
+    body {
+        font-family: monospace, sans-serif;
+        background-color: #0E1111;
+        /* Set the background color to black */
+    }
 
-        h2 {
-            color: #FFFFFF;
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 1px; /* Adjust the margin-bottom as needed */
-        }
+    h1 {
+        color: #FFFFFF;
+        font-size: 24px;
+        font-weight: bold;
+        padding-left: 120px;
+    }
 
-        .my-image {
-      width: 600px; /* Adjust the width as needed */
-      height: auto; /* Preserve the aspect ratio */
-      display: block; /* Ensures proper spacing */
-      margin-top: -10px; /* Adjust the margin-top as needed */
+    p {
+        color: #FFFFFF;
+        font-size: 16px;
+        line-height: 1.5;
+        max-width: 600px;
+        /* Adjust the max width as needed */
+        margin-top: 1px;
+    }
+
+    h2 {
+        color: #FFFFFF;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 1px;
+        /* Adjust the margin-bottom as needed */
+    }
+
+    .my-image {
+        width: auto;
+        /* Adjust the width as needed */
+        height: auto;
+        /* Preserve the aspect ratio */
+        display: block;
+        /* Ensures proper spacing */
+        margin-top: -10px;
+        /* Adjust the margin-top as needed */
     }
 
     .grid-container {
-      display: grid;
-      grid-template-columns: 3fr 2fr;
-      grid-template-rows: auto;
-      grid-gap: 0px;
-      padding-top: 40px;
-      padding-left: 80px;
+        display: grid;
+        grid-template-columns: 4fr 2fr;
+        grid-template-rows: auto;
+        grid-gap: 0px;
+        padding-top: 40px;
+        padding-left: 80px;
     }
 
     .grid-item {
-      padding: 5px;
+        padding: 0px;
     }
 
     .item-span {
-      grid-column: 1 / 3; /* Place the item in columns 1 to 3 */
+        grid-column: 1 / 3;
+        /* Place the item in columns 1 to 3 */
     }
 
-      </style>
+    .content {
+        background-image: url('/src/logo-fipa.svg');
+        background-position: 10px 20px;
+        background-repeat: no-repeat;
+    }
+
+    .image-container {
+        display: flex;
+        /* Use flexbox for the container */
+    }
+
+    .image-container img {
+        flex: 1;
+        /* Make the images share equal space */
+        margin-right: 10px;
+        /* Add a small margin between the images */
+    }
+</style>
+
 <head>
-  <title>souvenirs de l’hôtel de la paix</title>
-  <!-- Additional meta tags, stylesheets, or scripts can be added here -->
+    <title>souvenirs de l’hôtel de la paix</title>
+    <!-- Additional meta tags, stylesheets, or scripts can be added here -->
 </head>
+
 <body>
-    <div class="grid-container">
-        <div class="grid-item item-span"><h1>souvenirs de l’hôtel de la paix</h1>
-            <img class="my-image" src="src/drone3d_placeholder.jpg" alt="Image"></div>
-        <div class="grid-item"><h2>
-            cartographie 3d</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a mi quis neque fringilla rhoncus. Pellentesque dignissim pretium tortor eu sollicitudin. 
-                Vivamus quis rutrum neque, vitae pharetra nulla. Maecenas fermentum ante quis tortor elementum, et placerat erat porttitor. Integer rutrum egestas massa id porttitor. 
-                Sed viverra nisl odio, vel dignissim eros vestibulum non. Vestibulum vel ullamcorper felis. Duis nec lacinia ligula. 
-                Suspendisse ultricies libero at lorem volutpat efficitur a sed purus. </p>
-              <!-- Add more content and HTML elements as needed --></div>
-        <div class="grid-item"></div>
-      </div>
+    <div class="content">
+        <div class="grid-container">
+            <div class="grid-item item-span">
+                <h1>souvenirs de l’hôtel de la paix</h1>
+                <img class="my-image" src="src/drone3d_placeholder.jpg" alt="Image">
+            </div>
+            <div class="grid-item">
+                <h2>cartographie 3d</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a mi quis neque fringilla rhoncus.
+                    Pellentesque dignissim pretium tortor eu sollicitudin.
+                    Vivamus quis rutrum neque, vitae pharetra nulla. Maecenas fermentum ante quis tortor elementum, et
+                    placerat erat porttitor. Integer rutrum egestas massa id porttitor.
+                    Sed viverra nisl odio, vel dignissim eros vestibulum non. Vestibulum vel ullamcorper felis. Duis nec
+                    lacinia ligula.
+                    Suspendisse ultricies libero at lorem volutpat efficitur a sed purus. </p>
+                <p>Vestibulum commodo quam erat, id sagittis nunc sodales at. Maecenas venenatis luctus tortor, vitae
+                    consequat leo dignissim ut. Donec metus odio, molestie id mi id, finibus convallis tortor.
+                    Pellentesque non quam turpis. Etiam viverra orci non consectetur euismod. Sed vitae gravida libero.
+                    Maecenas dictum lobortis metus id hendrerit. Vestibulum efficitur erat sem, lacinia tincidunt nisi
+                    pulvinar ut. Sed leo elit, tempus eu ligula id, ornare fringilla neque. Vivamus cursus venenatis
+                    ultrices. Nam vehicula malesuada tellus scelerisque laoreet.</p>
+                <p>In euismod facilisis mauris et semper. Phasellus a odio id neque ullamcorper volutpat. Phasellus
+                    pharetra efficitur enim ut gravida. In luctus purus dolor, nec tristique erat condimentum eu. Nulla
+                    eleifend nunc ut sollicitudin sollicitudin. Nam tincidunt, risus eu lacinia euismod, nisl orci
+                    tempus tortor, sit amet maximus elit mauris eu nisi. Praesent imperdiet consequat nibh. Duis
+                    placerat felis eu ligula placerat volutpat. Proin non pulvinar leo.</p>
+            <div class="grid-item">
+                <h2>modèles architecturaux</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a mi quis neque fringilla rhoncus.
+                        Pellentesque dignissim pretium tortor eu sollicitudin. Vivamus quis rutrum neque, vitae pharetra
+                        nulla. Maecenas fermentum ante quis tortor elementum, et placerat erat porttitor. Integer rutrum
+                        egestas massa id porttitor. Sed viverra nisl odio, vel dignissim eros vestibulum non. Vestibulum
+                        vel ullamcorper felis. Duis nec lacinia ligula. Suspendisse ultricies libero at lorem volutpat
+                        efficitur a sed purus.</p>
+            </div>
+            <div class="grid-item item-span">
+                <div class="image-container">
+                    <img src="src/plan_masse.jpg" alt="Image 1">
+                    <img src="src/axonometrie.jpg" alt="Image 2">
+                </div>
+            <div class="grid-item">
+                <h2>zones du site</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a mi quis neque fringilla rhoncus.
+                    Pellentesque dignissim
+                        pretium tortor eu sollicitudin. Vivamus quis rutrum neque, vitae pharetra nulla. Maecenas
+                        fermentum ante quis tortor
+                        elementum, et placerat erat porttitor. Integer rutrum egestas massa id porttitor. Sed viverra
+                        nisl odio, vel dignissim
+                        eros vestibulum non. Vestibulum vel ullamcorper felis. Duis nec lacinia ligula. Suspendisse
+                        ultricies libero at lorem
+                        volutpat efficitur a sed purus.
+                </p>
+            </div>
+            <div class="grid-item item-span">
+                <div class="image-container">
+                    <img src="src/hotel.png" alt="Image 1">
+                    <img src="src/bungalow.png" alt="Image 2">
+                </div>
+
+                <div class="image-container">
+                    <img src="src/logements.png" alt="Image 1">
+                    <img src="src/exterieurs.png" alt="Image 2">
+                </div>
+                
+            <div class="grid-item">
+                <h2>nos partenaires</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a mi quis neque fringilla rhoncus. Pellentesque dignissim pretium tortor eu sollicitudin.</p>
+            </div>
+            <div class="grid-item item-span">
+                <div>
+                    <img src="src/mm_logo_neg.svg" alt="Image 1" width=auto, height="50">
+                    <img src="src/ue_financemebt.svg" alt="Image 2" width=auto, height="50">
+                    <img src="src/flyinglabs.svg" alt="Image 3" width=auto, height="50">
+                </div>
+            </div>
 </body>
 </html>
