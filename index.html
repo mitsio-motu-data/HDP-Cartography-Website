@@ -15,7 +15,8 @@
         font-weight: bold;
         padding-left: 120px;
     }
-
+    .thumbnail-img {
+    height: 30vh; /* Adjust the height value as needed */}
     p {
         color: #FFFFFF;
         font-size: 14px;
@@ -44,6 +45,10 @@
         /* Ensures proper spacing */
         margin-top: -10px;
         /* Adjust the margin-top as needed */
+    }
+
+    .custom-link {
+      color: white;
     }
 
     .grid-container {
@@ -110,10 +115,15 @@
 L'image ci-dessus représente une axonométrie du terrain de l'Hôtel de la Paix. L'axonométrie est une méthode de représentation graphique largement utilisée en architecture pour présenter un projet en trois dimensions. Elle permet de représenter un bâtiment ou un espace en conservant les proportions et les relations spatiales réalistes, tout en fournissant une vision globale de la structure.</p>
             </div>
             <div class="grid-item item-span">
-                <div class="image-container">
-                    <img src="src/plan_masse.jpg" alt="Image 1">
-                    <img src="src/axonometrie.jpg" alt="Image 2">
-                </div>
+              <div class="image-container">
+                <a href="src/plan_masse_full.jpg" target="_blank">
+                  <img src="src/plan_masse_thumb.jpg" alt="Thumbnail 1" class="thumbnail-img">
+                </a>
+                <a href="src/axonometrie_full.jpg" target="_blank">
+                  <img src="src/axonometrie_thumb.jpg" alt="Thumbnail 2"class="thumbnail-img">
+                </a>
+              </div>
+            </div>            
             <div class="grid-item">
                 <p>
                     Des fiches ont été rédigées pour chaque type de bâtiment afin de visualiser les matériaux utilisés dans leur construction ainsi que les éléments architecturaux.
@@ -121,168 +131,34 @@ L'image ci-dessus représente une axonométrie du terrain de l'Hôtel de la Paix
             </div>
             <div class="grid-item item-span">
                 <div class="image-container">
-                    <img src="src/hotel.png" alt="Image 1">
-                    <img src="src/bungalow.png" alt="Image 2">
+                  <a href="src/hotel_full.jpg" target="_blank">
+                    <img src="src/hotel_thumb.jpg" alt="Thumbnail 2"class="thumbnail-img">
+                  </a>
+                  <a href="src/bungalow_full.jpg" target="_blank">
+                    <img src="src/bungalow_thumb.jpg" alt="Thumbnail 2"class="thumbnail-img">
+                  </a>
                 </div>
 
                 <div class="image-container">
-                    <img src="src/logements.png" alt="Image 1">
-                    <img src="src/exterieurs.png" alt="Image 2">
+                  <a href="src/logements_full.jpg" target="_blank">
+                    <img src="src/logements_thumb.jpg" alt="Thumbnail 2"class="thumbnail-img">
+                  </a>
+                  <a href="src/exterieurs_full.jpg" target="_blank">
+                    <img src="src/exterieurs_thumb.jpg" alt="Thumbnail 2"class="thumbnail-img">
+                  </a>
                 </div>
                 
             <div class="grid-item">
                 <h2>nos partenaires</h2>
-                <p>Ce projet a été développé par Adèle Pluquet (https://github.com/apluquet) et Adrien Anton-Ludwig (https://github.com/Adrien-ANTON-LUDWIG) dans le cadre de leur collaboration avec Mitsio Motu en 2023. </p>
+                <p>Ce projet a été développé par <a href="https://github.com/apluquet" class = "custom-link" target="_blank">Adèle Pluquet</a> et <a href="https://github.com/Adrien-ANTON-LUDWIG" class = "custom-link" target="_blank">Adrien Anton-Ludwig</a> dans le cadre de leur collaboration avec Mitsio Motu en 2023. </p>
                 <p>Les axonométries et descriptions de l'architecture de l'hôtel et de ses environs ont été réalisées par une équipe d'urbanistes et d'architectes comprenant All-Glory Houenassou, Isreal Obi, Abiel-Verén Fidegnon et Steven Montcho, avec le soutien de Mme Monica Coralli, architecte-urbaniste.</p>
-                <p>Nous exprimons notre gratitude à l'équipe de Flying Labs Togo pour leur soutien tout au long du projet.</p>
-                <p>Mitsio Motu est une société présente en Afrique de l'Ouest et en France qui construit des systèmes d'information visant à permettre un accès universel aux services de base. </p>
+                <p>Nous exprimons notre gratitude à l'équipe de <a href="https://www.mitsiomotu.com/" class = "custom-link" target="_blank">Flying Labs Togo</a> pour leur soutien tout au long du projet.</p>
+                <p><a href="https://www.mitsiomotu.com/" class = "custom-link" target="_blank">Mitsio Motu</a> est une société présente en Afrique de l'Ouest et en France qui construit des systèmes d'information visant à permettre un accès universel aux services de base. </p>
             </div>
             <div class="grid-item item-span">
                 <div>
-                    <img src="src/mm_logo_neg.svg" alt="Image 1" width=auto, height="50">
-                    <img src="src/ue_financemebt.svg" alt="Image 2" width=auto, height="50">
-                    <img src="src/flyinglabs.svg" alt="Image 3" width=auto, height="50">
+                    <img src="src/logos_partenaires.svg" alt="Image 1" width=auto, height="50">
                 </div>
             </div>
 </body>
-  
-  <script>
-    const canvasWidth = 700;
-    const canvasHeight = 400;
-  
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, canvasWidth / canvasHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('model-viewer') });
-    renderer.setSize(canvasWidth, canvasHeight);
-  
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
-  
-    camera.position.z = 5;
-  
-    let isDragging = false;
-    let previousMousePosition = { x: 0, y: 0 };
-    let previousTouchPosition = { x: 0, y: 0 };
-    let zoomLevel = 1;
-    const zoomIncrement = 0.1;
-  
-    document.addEventListener('mousedown', onMouseDown);
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseup', onMouseUp);
-    document.addEventListener('touchstart', onTouchStart);
-    document.addEventListener('touchmove', onTouchMove);
-    document.addEventListener('touchend', onTouchEnd);
-    document.getElementById('zoom-in').addEventListener('click', zoomIn);
-    document.getElementById('zoom-out').addEventListener('click', zoomOut);
-  
-    function onMouseDown(event) {
-      isDragging = true;
-      previousMousePosition = getMousePosition(event);
-    }
-  
-    function onMouseMove(event) {
-      if (!isDragging) return;
-  
-      const currentMousePosition = getMousePosition(event);
-      const deltaMove = {
-        x: currentMousePosition.x - previousMousePosition.x,
-        y: currentMousePosition.y - previousMousePosition.y
-      };
-  
-      const deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(
-        new THREE.Euler(
-          toRadians(deltaMove.y * 1),
-          toRadians(deltaMove.x * 1),
-          0,
-          'XYZ'
-        )
-      );
-  
-      cube.quaternion.multiplyQuaternions(deltaRotationQuaternion, cube.quaternion);
-  
-      previousMousePosition = currentMousePosition;
-    }
-  
-    function onMouseUp(event) {
-      isDragging = false;
-    }
-  
-    function onTouchStart(event) {
-      isDragging = true;
-      previousTouchPosition = getTouchPosition(event);
-    }
-  
-    function onTouchMove(event) {
-      if (!isDragging) return;
-  
-      const currentTouchPosition = getTouchPosition(event);
-      const deltaMove = {
-        x: currentTouchPosition.x - previousTouchPosition.x,
-        y: currentTouchPosition.y - previousTouchPosition.y
-      };
-  
-      const deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(
-        new THREE.Euler(
-          toRadians(deltaMove.y * 1),
-          toRadians(deltaMove.x * 1),
-          0,
-          'XYZ'
-        )
-      );
-  
-      cube.quaternion.multiplyQuaternions(deltaRotationQuaternion, cube.quaternion);
-  
-      previousTouchPosition = currentTouchPosition;
-    }
-  
-    function onTouchEnd(event) {
-      isDragging = false;
-    }
-  
-    function zoomIn() {
-      zoom(1);
-    }
-  
-    function zoomOut() {
-      zoom(-1);
-    }
-  
-    function zoom(delta) {
-      zoomLevel += delta * zoomIncrement;
-      zoomLevel = Math.max(zoomLevel, 0.1);
-      zoomLevel = Math.min(zoomLevel, 2);
-      cube.scale.set(zoomLevel, zoomLevel, zoomLevel);
-    }
-  
-    function getMousePosition(event) {
-      return { x: event.clientX, y: event.clientY };
-    }
-  
-    function getTouchPosition(event) {
-      const touch = event.touches[0];
-      return { x: touch.clientX, y: touch.clientY };
-    }
-  
-    function animate() {
-      requestAnimationFrame(animate);
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
-      renderer.render(scene, camera);
-    }
-    animate();
-  
-    function toRadians(angle) {
-      return angle * (Math.PI / 180);
-    }
-  
-    // Disable zooming using the scroll wheel
-    document.addEventListener('wheel', function(event) {
-      event.preventDefault();
-    });
-  </script>
-  
-  
-
 </html>
