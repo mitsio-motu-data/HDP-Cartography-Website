@@ -1,0 +1,88 @@
+body {
+    font-family: monospace, sans-serif;
+    background-color: #0E1111;
+    /* Set the background color to black */
+    overflow: auto;
+}
+
+h1 {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 120px;
+}
+.thumbnail-img {
+height: 30vh; /* Adjust the height value as needed */}
+p {
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 600px;
+    /* Adjust the max width as needed */
+    margin-top: 1px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+h2 {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 1px;
+    /* Adjust the margin-bottom as needed */
+}
+
+.my-image {
+    width: auto;
+    /* Adjust the width as needed */
+    height: auto;
+    /* Preserve the aspect ratio */
+    display: block;
+    /* Ensures proper spacing */
+    margin-top: -10px;
+    /* Adjust the margin-top as needed */
+}
+
+.custom-link {
+  color: white;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    grid-template-rows: auto;
+    grid-gap: 0px;
+    padding-top: 40px;
+    padding-left: 80px;
+}
+
+.grid-item {
+    padding: 0px;
+}
+
+.item-span {
+    grid-column: 1 / 3;
+    /* Place the item in columns 1 to 3 */
+}
+
+.content {
+    background-image: url('../images/logo.svg');
+    background-position: 10px 20px;
+    background-repeat: no-repeat;
+}
+
+.image-container {
+    display: flex;
+    /* Use flexbox for the container */
+}
+
+.image-container img {
+    flex: 1;
+    /* Make the images share equal space */
+    margin-right: 10px;
+    /* Add a small margin between the images */
+}
+
+canvas {
+  touch-action: none;
+}
