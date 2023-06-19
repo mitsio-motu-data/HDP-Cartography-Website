@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg463"
+   width="274.08722"
+   height="97.125305"
+   viewBox="0 0 274.08722 97.125305"
+   sodipodi:docname="logo_fl.png"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs467" />
+  <sodipodi:namedview
+     id="namedview465"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="false" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g469"
+     transform="translate(-29.041786,-164.7785)">
+    <g
+       id="g741">
+      <path
+         style="fill:#ffffff;stroke-width:0.274365"
+         d="m 29.041791,186.31618 v -21.53767 h 13.169534 13.169533 v 2.60647 2.60647 h -8.746094 c -7.081504,0 -8.805617,0.0717 -9.058839,0.37683 -0.22039,0.26555 -0.291076,2.43286 -0.239368,7.33927 l 0.07337,6.96244 8.436732,0.0726 8.436733,0.0726 v 3.01405 3.01405 h -8.071336 c -4.439235,0 -8.266631,0.0749 -8.505324,0.16654 -0.382567,0.14681 -0.433987,1.15454 -0.433987,8.50533 v 8.33878 h -4.11548 -4.115479 z"
+         id="path617" />
+      <path
+         style="fill:#ffffff;stroke-width:0.274365"
+         d="m 29.041791,240.36614 v -21.53767 h 3.155201 3.155201 v 18.51965 18.51966 H 62.78872 90.225248 v 3.01801 3.01802 H 59.633519 29.041791 Z"
+         id="path619" />
+      <path
+         style="fill:#ffffff;stroke-width:0.274365"
+         d="m 99.004936,240.36614 v -21.53767 h 4.115474 4.11548 v 18.51965 18.51966 h 9.4656 9.4656 v 3.01801 3.01802 H 112.58601 99.004936 Z"
+         id="path621" />
+      <path
+         style="fill:#ffffff;stroke-width:0.274365"
+         d="M 120.13106,207.99104 V 171.08891 H 92.145804 64.160546 v -3.1552 -3.1552 h 31.003276 31.003268 v 40.05733 40.05732 h -3.01802 -3.01801 z"
+         id="path623" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:33.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff"
+       x="139.39586"
+       y="202.40784"
+       id="text683"><tspan
+         sodipodi:role="line"
+         id="tspan681"
+         x="139.39586"
+         y="202.40784"
+         style="font-weight:bold">Togo</tspan><tspan
+         sodipodi:role="line"
+         x="139.39586"
+         y="244.07446"
+         id="tspan735">FlyingLabs</tspan></text>
+  </g>
+</svg>
