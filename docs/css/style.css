@@ -33,13 +33,20 @@ p {
   text-justify: auto;
 }
 
+.switch-lang {
+  cursor: pointer;
+  float: right;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .content {
   width: 800px;
   margin: 0 auto;
-  background-image: url('../images/logo.svg');
-  background-position: 10px 20px;
-  background-repeat: no-repeat;
 
 }
 
