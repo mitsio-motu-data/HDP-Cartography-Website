@@ -1,6 +1,6 @@
 # Site de la catographie de l'Hôtel de la Paix
 
-**Accès** : [https://mitsio-motu-data.github.io/fipa/](https://mitsio-motu-data.github.io/HDP-Cartography-Website/)
+**Accès** : [https://mitsio-motu-data.github.io/HDP-Cartography-Website/](https://mitsio-motu-data.github.io/HDP-Cartography-Website/)
 
 <p align=center>
     <img src="./docs/images//hdp_old.jpg" width=600/><br>
