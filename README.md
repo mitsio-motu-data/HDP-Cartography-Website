@@ -9,9 +9,9 @@
 
 En avril 2023, l'Hôtel de la Paix, ancien hôtel phare de Lomé abandonné depuis 20 ans, menace d'être détruit. Dans un objectif de sauvegarde du patrimoine, **[Mitsio Motu](https://www.mitsiomotu.com/)** a décidé de cartographier le bâtiment. Pour cela, deux méthodes ont été mises en place : 
 - Cartographie 3D à l'aide de drones
-- Cartographie en relevant les plans et matérieux utilisés
+- Cartographie en relevant les plans et matériaux utilisés
 
-Ce site présente le travail réalisé par nos équipes et partenaire.
+Ce site présente le travail réalisé par nos équipes et partenaires.
 
 ## Contribuer
 
