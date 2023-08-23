@@ -7,22 +7,40 @@
     <em>Hôtel de la Paix (photo d'époque)</em>
 </p>
 
-En avril 2023, l'Hôtel de la Paix, ancien hôtel phare de Lomé abandonné depuis 20 ans, menace d'être détruit. Dans un objectif de sauvegarde du patrimoine, **[Mitsio Motu](https://www.mitsiomotu.com/)** a décidé de cartographier le bâtiment. Pour cela, deux méthodes ont été mises en place : 
-- Cartographie 3D à l'aide de drones
-- Cartographie en relevant les plans et matériaux utilisés
+En avril 2023, l'Hôtel de la Paix, ancien hôtel phare de Lomé abandonné depuis 20 ans, menace d'être détruit. Dans un objectif de sauvegarde du patrimoine, **[Mitsio Motu](https://www.mitsiomotu.com/)** a décidé de cartographier le bâtiment. Pour cela, deux méthodes ont été mises en place :
+
+- Reconstruction 3D à l'aide de drones
+
+<div class="image-container" align="center">
+    <a href="docs/images/hdp_3d_reconstruction.jpg" target="_blank">
+    <img width=40% src="docs/images/hdp_3d_reconstruction.jpg" alt="Reconstruction 3D de l'Hôtel de la Paix" class="thumbnail-img">
+    </a>
+</div>
+
+- Axonométrie en relevant les plans et matériaux utilisés
+
+<div class="image-container" align="center">
+    <a href="docs/images/plan_masse_full.jpg" target="_blank">
+    <img width=30% src="docs/images/plan_masse_thumb.jpg" alt="Plan montrant les bâtiments sur le site" class="thumbnail-img">
+    </a>
+    <a href="docs/images/axonometrie_full.jpg" target="_blank">
+    <img width=30% src="docs/images/axonometrie_thumb.jpg" alt="Axonométrie des bâtiments du site" class="thumbnail-img">
+    </a>
+</div>
 
 Ce site présente le travail réalisé par nos équipes et partenaires.
 
 ## Contribuer
 
-Pour contribuer, il vous suffit de *cloner* de dépôt : 
+Pour contribuer, il vous suffit de *cloner* de dépôt :
+
 ```bash
 git clone <this-repo>
 ```
 
 ## Structure du dépôt
 
-Lors de vos modifications, merci de respecter cette structure : 
+Lors de vos modifications, merci de respecter cette structure :
 
 ```sh
 .
